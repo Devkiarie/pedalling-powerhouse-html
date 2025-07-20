@@ -153,9 +153,9 @@ function displayCartItems() {
                 <div class="cart-item-category">${item.category}</div>
             </div>
             <div class="quantity-controls">
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                <button class="quantity-btn decrease" onclick="updateQuantity(${item.id}, -1)">−</button>
                 <span class="quantity">${item.quantity}</span>
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                <button class="quantity-btn increase" onclick="updateQuantity(${item.id}, 1)">+</button>
             </div>
             <div class="cart-item-price">KES ${(item.price * item.quantity).toLocaleString()}</div>
             <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
