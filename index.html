@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedalling Powerhouse - Premium Bicycles & Accessories Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <span class="full-logo"><span>P</span>EDALLING <span>P</span>OWERHOUSE</span>
+                <span class="abbr-logo">PP</span>
+            </div>
+            <div class="right-nav">
+                <div class="cart-toggle" onclick="showSection('cart')">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-text">Cart (<span id="cart-count">0</span>) — KES <span id="cart-total">0</span></span>
+                    <span class="cart-count-badge" id="cart-badge">0</span>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" class="nav-link" data-section="hero">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="products">Shop</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero-section" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-subtitle">Starting at — KES 3,250</div>
+                    <h1 class="hero-title">Premium<br><strong>Bicycles & Accessories</strong></h1>
+                    <p class="hero-description">Discover our collection of meticulously crafted bicycles and accessories, designed for Kenya's urban and rural explorers. Perfect for Nairobi streets and beyond.</p>
+                    <div class="hero-price">
+                        <span>Starting at</span><br>
+                        KES 3,250
+                    </div>
+                    <button class="cta-button" onclick="showSection('products')">
+                        <i class="fas fa-bicycle"></i> Explore Collection
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <div class="bike-showcase">
+                        <img src="/assets/bike.png" alt="Bicycle" class="bike-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products-section" class="section products-section hidden">
+            <div class="products-container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Collection</h2>
+                    <p class="section-subtitle">Explore our range of bicycles and accessories, crafted for Kenya's diverse terrains and urban adventures.</p>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="cart-section" class="section cart-section hidden">
+            <div class="cart-container">
+                <div class="section-header">
+                    <h2 class="section-title">Shopping Cart</h2>
+                </div>
+                <div id="cart-items">
+                    <div class="empty-state">
+                        <h3>Your cart is empty</h3>
+                        <p>Add some bicycles or accessories to get started</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="checkout-section" class="section checkout-section hidden">
+            <div class="checkout-container">
+                <div class="section-header">
+                    <h2 class="section-title">Checkout</h2>
+                </div>
+                <div id="checkout-content">
+                    <div class="empty-state">
+                        <h3>Nothing to checkout</h3>
+                        <p>Add some bicycles or accessories to your cart first</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="section contact-section hidden">
+            <div class="contact-container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-subtitle">Get in touch with us for more information or support.</p>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="openWhatsAppChat(event)" class="contact-form-grid">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Message</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="place-order-btn">Send Message via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> Pedalling Powerhouse™</p>
+            <p><a href="mailto:support@pedallingpowerhouse.com">support@pedallingpowerhouse.com</a> | <a href="tel:+254757121320">+254 757 121 320</a></p>
+            <p>Made and maintained by <a href="https://devkiarie.github.io" target="_blank" rel="noopener">Devkiarie</a></p>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float" onclick="openWhatsAppChat()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Item added to cart</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
